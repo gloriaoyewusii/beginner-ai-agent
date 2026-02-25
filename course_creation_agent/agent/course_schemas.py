@@ -10,17 +10,15 @@ class ComplexityLevel(str, Enum):
 
 
 class CourseDefinitionRequest(BaseModel):
-    course_title: str = Field(..., min_length=10, max_length=100)
+    course_title: str = Field(..., min_length=2, max_length=100)
     complexity_level: ComplexityLevel
 
 
 class CourseDefinitionResponse(BaseModel):
-    course_title: str = Field(..., min_length=10, max_length=100)
+    course_title: str = Field(..., min_length=2, max_length=100)
     course_description: str = Field(..., min_length=20, max_length=2500)
     learning_outcomes: List[str] = Field(..., min_length=3, max_length=12)
     learning_objectives: List[str] = Field(..., min_length=3, max_length=16)
-    learners_description: str = Field(..., min_length=20, max_length=2500)
     prerequisites: List[str] = Field(default_factory=list, max_length=10)
-
-    # Product rule: user can select up to 5; agent should also output up to 5
+    learners_description: str = Field(..., min_length=20, max_length=2500)
     career_pathway: List[str] = Field(..., min_length=1, max_length=5)
