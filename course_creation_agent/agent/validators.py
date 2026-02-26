@@ -68,7 +68,6 @@ def validate_response_json(data: dict) -> CourseDefinitionResponse:
 def validate_no_placeholders(obj: CourseDefinitionResponse) -> None:
     combined = " ".join(
         [obj.course_title, obj.course_description, obj.learners_description]
-        + obj.learning_outcomes
         + obj.learning_objectives
         + obj.prerequisites
         + obj.career_pathway
@@ -84,7 +83,6 @@ def validate_no_duplicates(obj: CourseDefinitionResponse) -> None:
         if len(normed) != len(set(normed)):
             raise ValueError(f"Duplicates detected in '{name}'.")
 
-    check_list("learning_outcomes", obj.learning_outcomes)
     check_list("learning_objectives", obj.learning_objectives)
     check_list("prerequisites", obj.prerequisites)
     check_list("career_pathway", obj.career_pathway)

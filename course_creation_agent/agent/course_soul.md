@@ -24,7 +24,6 @@ Return exactly this JSON shape:
 {
   "course_title": string,
   "course_description": string,
-  "learning_outcomes": [string, ...],
   "learning_objectives": [string, ...],
   "prerequisites": [string, ...],
   "learners_description": string,
@@ -36,7 +35,6 @@ Return exactly this JSON shape:
 - course_title MUST be Title Case (e.g., "Foundations of UI/UX & Game Designs").
 - course_title MUST NOT include the word "course" at the end of the title.
 - course_description MUST NOT be empty and is maximum of 2500 characters.
-- learning_outcomes: 3–12 items
 - learning_objectives: 3–16 items
 - prerequisites: List the required skills and experience(s) learners should have prior to taking this course.
 - prerequisites: can be empty [], but maximum of 2500 characters.
@@ -47,7 +45,7 @@ Return exactly this JSON shape:
 
 
 # Style Rules
-- Keep outcomes and objectives clear, specific, and action-oriented.
+- Keep objectives clear, specific, and action-oriented.
 - Keep prerequisites practical and minimal; do not invent specific background if not provided.
 
 # Career Pathway List (allowed values)
